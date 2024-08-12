@@ -90,7 +90,7 @@ public class UserActivationView extends StandardView {
 
     @Subscribe(id = "returnToLoginBtn", subject = "clickListener")
     public void onReturnToLoginBtnClick(final ClickEvent<JmixButton> event) {
-        viewNavigators.view(LoginView.class)
+        viewNavigators.view(this, LoginView.class)
                 .navigate();
     }
 
@@ -126,7 +126,7 @@ public class UserActivationView extends StandardView {
 
         SecurityContextHelper.setAuthentication(authentication);
 
-        viewNavigators.view(MainView.class)
+        viewNavigators.view(this, MainView.class)
                 .navigate();
     }
 
